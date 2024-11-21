@@ -1,0 +1,19 @@
+// the "!' mark says that the field is required
+type User {
+  id: ID!,
+  username: String!,
+  phone: String!,
+  email: String!,
+}
+
+type Query {
+users: [User!]!,
+user(id: ID!): User,
+me:User!,
+} 
+
+
+# for none quering actions
+type Mutation { 
+
+}
