@@ -1,7 +1,6 @@
 type User {
   id: ID!
-  username: String!
-  phone: String!
+  name: String!
   email: String!
 }
 
@@ -11,21 +10,17 @@ type Query {
 }
 
 input createUser {
-  id: ID!
   name: String!
-  phone: String!
   email: String
 }
 
 input updateuser {
-  id: ID!
   name: String!
-  phone: String!
   email: String
 }
 
 type Mutation {
   addUser(createUser: createUser): User
-  deleteUser(id: ID!): [User]
+  deleteUser(id: ID!): String
   updateUser(id: ID!, updateuser: updateuser): User
 }
