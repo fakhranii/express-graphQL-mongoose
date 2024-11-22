@@ -1,19 +1,31 @@
-// the "!' mark says that the field is required
 type User {
-  id: ID!,
-  username: String!,
-  phone: String!,
-  email: String!,
+  id: ID!
+  username: String!
+  phone: String!
+  email: String!
 }
 
 type Query {
-users: [User!]!,
-user(id: ID!): User,
-me:User!,
-} 
+  users: [User!]!
+  user(id: ID!): User
+}
 
+input createUser {
+  id: ID!
+  name: String!
+  phone: String!
+  email: String
+}
 
-# for none quering actions
-type Mutation { 
+input updateuser {
+  id: ID!
+  name: String!
+  phone: String!
+  email: String
+}
 
+type Mutation {
+  addUser(createUser: createUser): User
+  deleteUser(id: ID!): [User]
+  updateUser(id: ID!, updateuser: updateuser): User
 }

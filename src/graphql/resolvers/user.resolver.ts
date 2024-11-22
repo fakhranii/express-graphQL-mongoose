@@ -5,7 +5,12 @@
 export const userResolvers = {
   Query: {
     async users() {},
-    async user() {},
-    async me() {},
+    async user(parent: any, args: any) {},
+  },
+  Mutation: {
+    async addUser(parent: any, args: any) {
+      // operation of post new user, gonna be here
+      // the return statement
+    },
   },
 };
