@@ -2,9 +2,13 @@ import express from "express";
 import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
 import { typeDefs, resolvers } from "./graphql";
-import "dotenv/config";
 import connectDB from "./database/database.config";
+import { createClient } from "redis";
+import "dotenv/config";
 
+// you can use all terminal commandds with redisClient
+//  for example:redisClient.set("key", "value") , etc
+const redisClient = createClient();
 const app = express();
 
 connectDB();

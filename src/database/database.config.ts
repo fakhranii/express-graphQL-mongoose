@@ -1,15 +1,3 @@
-// import { connect } from "mongoose";
-// import dotenv from "dotenv";
-// dotenv.config();
-
-// const db = () => {
-//   connect().then((conn) => {
-//     console.log(`Database Connected: ${conn.connection.host}`);
-//   });
-// };
-
-// export default db;
-
 import mongoose from "mongoose";
 
 const connectDB = async () => {
